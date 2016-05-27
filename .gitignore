@@ -1,0 +1,3 @@
+*flaskapi_venv
+*.pyc
+*.sqlite

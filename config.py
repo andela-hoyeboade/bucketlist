@@ -14,6 +14,3 @@ AVAILABLE_ENDPOINTS = [
         ("DELETE /bucketlists/<id>/items/<item_id>", {"PUBLIC_ACCESS": False}),
     ]
 SECRET_KEY = 'secret'
-#SQLALCHEMY_TRACK_MODIFICATIONS = False
-#SQLALCHEMY_DATABASE_URI = 'postgresql://sunday:@localhost/bucketlist'
-#SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'migrations')

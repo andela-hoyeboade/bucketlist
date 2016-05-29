@@ -5,8 +5,6 @@ from sqlalchemy.orm import sessionmaker
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask_sqlalchemy import sqlalchemy
 import hashlib
-
-import app
 db = SQLAlchemy()
 class_mapper = sqlalchemy.orm.class_mapper
 
@@ -23,20 +21,6 @@ class Base(db.Model):
         
         try:
             db.session.add(self)
-            db.session.commit()
-            return True
-        except:
-            return False
-    def update(self):
-        try:
-            db.session.commit()
-            return True
-        except:
-            return False
-    
-    def delete(self):
-        try:
-            db.session.delete(self)
             db.session.commit()
             return True
         except:
@@ -74,7 +58,7 @@ class BucketList(Base):
     bucketlistitems = db.relationship("BucketListItem")
 
     def __init__(self, name, created_by):
-        """Initialize with <creator>, <name>
+        """Initializes model with <name> and the <creator>
         """
         self.name = name
         self.created_by = created_by
